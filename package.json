@@ -23,7 +23,8 @@
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
-    "vue": "^2.7.16"
+    "vue": "^2.7.16",
+    "vue-router": "^3.6.5"
   },
   "devDependencies": {
     "@eslint/css": "^0.14.1",
