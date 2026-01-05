@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter, { type RouteConfig } from 'vue-router';
-import HelloPage from '@/layout/HelloPage.vue';
+import HelloPage from '@/views/HelloPage.vue';
 import ResumeList from '@/layout/ResumeList.vue';
 import { isFirstVisited, markVisited } from '@/utils';
 
