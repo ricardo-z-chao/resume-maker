@@ -25,9 +25,9 @@ const router = new VueRouter({
 
 router.beforeEach((to, _from, next) => {
   if (to.path === '/hello') {
-    next();
     if (isFirstVisited()) {
       markVisited();
+      next();
     } else {
       next('/');
     }
