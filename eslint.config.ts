@@ -10,7 +10,7 @@ export default defineConfig([
   {
     ignores: ['dist/'],
   },
-  { languageOptions: { globals: globals.browser } },
+  { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
   {
     files: ['**/*.{js,cjs,mjs}'],
     ...eslint.configs.recommended,
