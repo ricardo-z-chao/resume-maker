@@ -3,6 +3,7 @@ import VueRouter, { type RouteConfig } from 'vue-router';
 import HelloPage from '@/views/HelloPage.vue';
 import ResumeList from '@/layout/ResumeList.vue';
 import { isFirstVisited, markVisited } from '@/utils';
+import { base } from '@/const';
 
 Vue.use(VueRouter);
 
@@ -19,6 +20,7 @@ const routes: RouteConfig[] = [
 
 const router = new VueRouter({
   mode: 'history',
+  base: base,
   routes,
 });
 

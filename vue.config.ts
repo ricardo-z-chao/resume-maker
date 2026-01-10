@@ -1,7 +1,8 @@
 import { defineConfig } from '@vue/cli-service';
+import { base } from '@/const';
 
 export default defineConfig({
-  publicPath: process.env.NODE_ENV === 'production' ? '/resume-maker/' : '/',
+  publicPath: base,
   css: {
     loaderOptions: {
       postcss: {
