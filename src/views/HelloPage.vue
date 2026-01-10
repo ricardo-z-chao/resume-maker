@@ -1,14 +1,31 @@
 <template>
   <div class="min-h-screen bg-slate-50">
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      class="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
       <!-- Gradient Background -->
-      <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-600/10 to-pink-500/10">
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-600/10 to-pink-500/10"
+      >
         <div
           class="absolute inset-0 animate-[gradientMove_15s_ease-in-out_infinite]"
           style="
-            background: radial-gradient(circle at 30% 50%, rgba(24, 144, 255, 0.15) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 50%, rgba(114, 46, 209, 0.15) 0%, transparent 50%),
-                        radial-gradient(circle at 50% 80%, rgba(235, 47, 150, 0.1) 0%, transparent 50%);
+            background:
+              radial-gradient(
+                circle at 30% 50%,
+                rgba(24, 144, 255, 0.15) 0%,
+                transparent 50%
+              ),
+              radial-gradient(
+                circle at 70% 50%,
+                rgba(114, 46, 209, 0.15) 0%,
+                transparent 50%
+              ),
+              radial-gradient(
+                circle at 50% 80%,
+                rgba(235, 47, 150, 0.1) 0%,
+                transparent 50%
+              );
             top: -50%;
             left: -50%;
             right: -50%;
@@ -57,11 +74,11 @@
         ></div>
         <div
           class="absolute top-[25%] right-[15%] w-[100px] h-[140px] bg-white/70 backdrop-blur-md border border-white/30 rounded-2xl shadow-lg animate-float"
-          style="animation-delay: 2s;"
+          style="animation-delay: 2s"
         ></div>
         <div
           class="absolute bottom-[20%] left-[15%] w-[90px] h-[120px] bg-white/70 backdrop-blur-md border border-white/30 rounded-2xl shadow-lg animate-float"
-          style="animation-delay: 4s;"
+          style="animation-delay: 4s"
         ></div>
       </div>
     </section>
@@ -75,7 +92,7 @@ export default defineComponent({
   name: 'HelloPage',
   methods: {
     handleStart() {
-      this.$emit('start-create');
+      this.$router.push('/');
     },
   },
 });
@@ -83,7 +100,8 @@ export default defineComponent({
 
 <style scoped>
 @keyframes gradientMove {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) rotate(0deg);
   }
   33% {
@@ -95,7 +113,8 @@ export default defineComponent({
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(0deg);
   }
   50% {
