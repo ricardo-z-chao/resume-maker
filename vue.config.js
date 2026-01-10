@@ -1,8 +1,5 @@
-import { defineConfig } from '@vue/cli-service';
-import { base } from '@/const';
-
-export default defineConfig({
-  publicPath: base,
+export default {
+  publicPath: process.env.VUE_APP_BASE_PATH,
   css: {
     loaderOptions: {
       postcss: {
@@ -14,4 +11,4 @@ export default defineConfig({
       },
     },
   },
-});
+};
