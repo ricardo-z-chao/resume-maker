@@ -5,3 +5,5 @@ pnpm-workspace.yaml
 .browserslistrc
 .prettierignore
 .env.*
+*.ico
+*.svg
