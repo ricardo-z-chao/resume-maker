@@ -7,3 +7,5 @@ pnpm-workspace.yaml
 .env.*
 *.ico
 *.svg
+.dockerignore
+Dockerfile
