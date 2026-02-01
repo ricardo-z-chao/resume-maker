@@ -15,20 +15,20 @@ RUN pnpm run build
 
 FROM nginx:alpine
 
-COPY --from=build /app/dist /home/resume-maker
+COPY --from=build /app/dist /usr/share/nginx/html/resume-maker/
 
 RUN cat > /etc/nginx/conf.d/default.conf <<EOF
 server {
     listen 80;
-
-    location = /favicon.svg {
-        return 301 /resume-maker/favicon.svg;
-    }
+    server_name _;
+    root /usr/share/nginx/html/;
 
     location /resume-maker/ {
-        root /home;
         index index.html;
     }
+
+    gzip on;
+    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
 }
 EOF
 
