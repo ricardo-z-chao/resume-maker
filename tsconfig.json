@@ -1,27 +1,14 @@
 {
+  "extends": "@vue/tsconfig",
+  "files": ["eslint.config.ts"],
+  "include": ["src/**/*.ts", "src/**/*.vue"],
   "compilerOptions": {
-    "target": "es5",
-    "module": "esnext",
-    "strict": true,
-    "noEmit": true,
-    "importHelpers": true,
-    "moduleResolution": "node",
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "useDefineForClassFields": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "sourceMap": true,
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     },
-    "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
-    "outDir": "dist"
-  },
-  "files": ["eslint.config.ts"],
-  "include": ["src/**/*.ts", "src/**/*.vue"],
-  "exclude": ["node_modules"]
+    "noImplicitAny": true,
+    "strictNullChecks": true
+  }
 }
