@@ -2,6 +2,9 @@ import type { Config } from 'stylelint';
 
 export default {
   extends: ['stylelint-config-recommended-vue', 'stylelint-config-standard'],
+  rules: {
+    'import-notation': null,
+  },
   overrides: [
     {
       files: ['**/*.vue'],
