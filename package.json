@@ -11,15 +11,23 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "typecheck": "tsc -p .",
+    "typecheck": "tsc",
     "format": "prettier --write --cache .",
-    "lint": "eslint --cache .",
+    "lint": "pnpm run lint:ts && pnpm run lint:style",
+    "lint:ts": "eslint --cache .",
+    "lint:style": "stylelint \"**/*.{css,html,vue}\" --config ./stylelint.config.ts --ignore-path .gitignore",
     "prepare": "node .husky/install.js"
   },
   "lint-staged": {
-    "*": [
+    "*.{ts,js,vue}": [
       "prettier --write --cache",
       "eslint --cache"
+    ],
+    "*.{css,html}": [
+      "prettier --write --cache"
+    ],
+    "*.{css,html,vue}": [
+      "stylelint --config ./stylelint.config.ts --ignore-path .gitignore"
     ]
   },
   "dependencies": {
@@ -30,11 +38,11 @@
     "vue-router": "^3.6.5"
   },
   "devDependencies": {
-    "@eslint/css": "^0.14.1",
     "@eslint/js": "^9.39.2",
     "@types/node": "^25.0.6",
     "@vue/cli-plugin-typescript": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "@vue/eslint-config-typescript": "^14.6.0",
     "@vue/tsconfig": "^0.8.1",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
@@ -43,7 +51,12 @@
     "husky": "^9.1.7",
     "jiti": "^2.6.1",
     "lint-staged": "^16.2.7",
+    "postcss-html": "^1.8.1",
     "prettier": "^3.7.4",
+    "stylelint": "^17.1.1",
+    "stylelint-config-recommended": "^18.0.0",
+    "stylelint-config-recommended-vue": "^1.6.1",
+    "stylelint-config-standard": "^40.0.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.51.0",
     "vue-template-compiler": "^2.6.14"
