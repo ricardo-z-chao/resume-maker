@@ -9,5 +9,3 @@ export default defineComponent({
   name: 'ResumeList',
 });
 </script>
-
-<style scoped></style>

@@ -11,5 +11,3 @@ export default defineComponent({
   name: 'App',
 });
 </script>
-
-<style scoped></style>

@@ -7,31 +7,7 @@
       <div
         class="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-600/10 to-pink-500/10"
       >
-        <div
-          class="absolute inset-0 animate-[gradientMove_15s_ease-in-out_infinite]"
-          style="
-            background:
-              radial-gradient(
-                circle at 30% 50%,
-                rgba(24, 144, 255, 0.15) 0%,
-                transparent 50%
-              ),
-              radial-gradient(
-                circle at 70% 50%,
-                rgba(114, 46, 209, 0.15) 0%,
-                transparent 50%
-              ),
-              radial-gradient(
-                circle at 50% 80%,
-                rgba(235, 47, 150, 0.1) 0%,
-                transparent 50%
-              );
-            top: -50%;
-            left: -50%;
-            right: -50%;
-            bottom: -50%;
-          "
-        ></div>
+        <div class="gradient-overlay"></div>
       </div>
 
       <!-- Content -->
@@ -69,17 +45,9 @@
 
       <!-- Floating Decoration Cards -->
       <div class="absolute inset-0 pointer-events-none overflow-hidden">
-        <div
-          class="absolute top-[15%] left-[10%] w-[120px] h-[160px] bg-white/70 backdrop-blur-md border border-white/30 rounded-2xl shadow-lg animate-float"
-        ></div>
-        <div
-          class="absolute top-[25%] right-[15%] w-[100px] h-[140px] bg-white/70 backdrop-blur-md border border-white/30 rounded-2xl shadow-lg animate-float"
-          style="animation-delay: 2s"
-        ></div>
-        <div
-          class="absolute bottom-[20%] left-[15%] w-[90px] h-[120px] bg-white/70 backdrop-blur-md border border-white/30 rounded-2xl shadow-lg animate-float"
-          style="animation-delay: 4s"
-        ></div>
+        <div class="float-card"></div>
+        <div class="float-card float-card-delay-1"></div>
+        <div class="float-card float-card-delay-2"></div>
       </div>
     </section>
   </div>
@@ -99,14 +67,59 @@ export default defineComponent({
 </script>
 
 <style scoped>
-@keyframes gradientMove {
+.gradient-overlay {
+  position: absolute;
+  inset: -50%;
+  background:
+    radial-gradient(circle at 30% 50%, rgb(24 144 255 / 15%), transparent 50%),
+    radial-gradient(circle at 70% 50%, rgb(114 46 209 / 15%), transparent 50%),
+    radial-gradient(circle at 50% 80%, rgb(235 47 150 / 10%), transparent 50%);
+  animation: gradient-move 15s ease-in-out infinite;
+}
+
+.float-card {
+  position: absolute;
+  background: rgb(255 255 255 / 70%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgb(255 255 255 / 30%);
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 10%);
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-card:nth-of-type(1) {
+  top: 15%;
+  left: 10%;
+  width: 120px;
+  height: 160px;
+}
+
+.float-card:nth-of-type(2) {
+  top: 25%;
+  right: 15%;
+  width: 100px;
+  height: 140px;
+  animation-delay: 2s;
+}
+
+.float-card:nth-of-type(3) {
+  bottom: 20%;
+  left: 15%;
+  width: 90px;
+  height: 120px;
+  animation-delay: 4s;
+}
+
+@keyframes gradient-move {
   0%,
   100% {
     transform: translate(0, 0) rotate(0deg);
   }
+
   33% {
     transform: translate(5%, 5%) rotate(120deg);
   }
+
   66% {
     transform: translate(-5%, 5%) rotate(240deg);
   }
@@ -117,12 +130,9 @@ export default defineComponent({
   100% {
     transform: translateY(0) rotate(0deg);
   }
+
   50% {
     transform: translateY(-20px) rotate(3deg);
   }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
 }
 </style>
