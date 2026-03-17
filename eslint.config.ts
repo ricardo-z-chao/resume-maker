@@ -1,34 +1,26 @@
-import js from '@eslint/js';
-import ts from 'typescript-eslint';
-import pluginVue from 'eslint-plugin-vue';
-import {
-  defineConfigWithVueTs,
-  vueTsConfigs,
-} from '@vue/eslint-config-typescript';
-import eslintConfigPrettier from 'eslint-config-prettier/flat';
-import { globalIgnores } from 'eslint/config';
-import globals from 'globals';
+import globals from "globals";
+import eslint from "@eslint/js";
+import tseslint from "typescript-eslint";
+import pluginVue from "eslint-plugin-vue";
+import eslintConfigPrettier from "eslint-config-prettier/flat";
+import { defineConfig, globalIgnores } from "eslint/config";
 
-export default defineConfigWithVueTs([
-  globalIgnores(['dist/']),
+export default defineConfig([
+  globalIgnores(["**/dist/"]),
   {
-    name: 'js',
-    files: ['**/*.js'],
-    ...js.configs.recommended,
-    languageOptions: { globals: { ...globals.browser, ...globals.node } },
-  },
-  {
-    name: 'ts',
-    files: ['**/*.ts'],
-    extends: [ts.configs.recommended],
-  },
-  {
-    name: 'vue',
-    files: ['**/*.vue'],
+    name: "ts",
+    files: ["**/*.{js,ts,vue}"],
     extends: [
-      pluginVue.configs['flat/vue2-recommended'],
-      vueTsConfigs.recommended,
+      eslint.configs.recommended,
+      ...tseslint.configs.recommended,
+      ...pluginVue.configs["flat/vue2-recommended"],
     ],
+    languageOptions: {
+      globals: { ...globals.browser, ...globals.node },
+      parserOptions: {
+        parser: tseslint.parser,
+      },
+    },
   },
   eslintConfigPrettier,
 ]);

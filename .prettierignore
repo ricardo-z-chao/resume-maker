@@ -2,11 +2,3 @@ dist/
 LICENSE.md
 pnpm-lock.yaml
 pnpm-workspace.yaml
-.browserslistrc
-.prettierignore
-.env.*
-*.ico
-*.svg
-.dockerignore
-Dockerfile
-*.conf
