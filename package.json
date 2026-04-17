@@ -16,6 +16,9 @@
     "prepare": "node .husky/install.js"
   },
   "lint-staged": {
+    "*.json": [
+      "prettier --write --cache"
+    ],
     "*.{ts,js,vue}": [
       "prettier --write --cache",
       "eslint --cache"
