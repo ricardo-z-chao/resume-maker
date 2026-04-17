@@ -23,12 +23,10 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.1",
-    "@tsconfig/node24": "^24.0.4",
     "@types/node": "^25.5.0",
     "@vue/cli-plugin-typescript": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "@vue/eslint-config-typescript": "^14.6.0",
-    "@vue/tsconfig": "^0.8.1",
     "tailwindcss": "^4.2.1",
     "typescript": "^5.9.3",
     "vue-template-compiler": "^2.6.14"
