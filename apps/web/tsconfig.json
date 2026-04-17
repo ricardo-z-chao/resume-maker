@@ -1,11 +1,7 @@
 {
-  "extends": ["../../tsconfig.base.json", "@vue/tsconfig/tsconfig.dom.json"],
-  "include": ["src/**/*.ts", "src/**/*.vue"],
-  "compilerOptions": {
-    "typeRoots": ["./src/types", "./node_modules/@types"],
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    },
-  }
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.node.json" },
+    { "path": "./tsconfig.app.json" }
+  ]
 }
