@@ -1,6 +1,13 @@
 @import url("tailwindcss");
 @import url("tw-animate-css");
 
+#app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
