@@ -9,6 +9,7 @@
     "node": ">=22.12.0"
   },
   "scripts": {
+    "dev": "pnpm -filter resume-maker-server run start:dev & pnpm -filter resume-maker-web run serve",
     "format": "prettier --write --cache .",
     "lint:ts": "eslint --cache .",
     "lint:css": "stylelint '**/*.{css,scss,sass,vue,html}' --config stylelint.config.ts --fix",
