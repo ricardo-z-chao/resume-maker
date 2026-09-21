@@ -23,3 +23,9 @@ declare module "*.css" {}
 declare module "*.scss" {}
 declare module "*.sass" {}
 declare module "*.less" {}
+
+// vue
+declare module "*.vue" {
+  import Vue from "vue";
+  export default Vue;
+}
