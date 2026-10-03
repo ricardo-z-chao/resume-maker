@@ -57,10 +57,10 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "HelloPage",
+  name: "HomePage",
   methods: {
     handleStart() {
-      this.$router.push("/");
+      this.$router.push("/resume");
     },
   },
 });
